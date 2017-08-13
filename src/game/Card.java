@@ -47,7 +47,7 @@ class Card {
         faceUp = !faceUp;
     }
 
-    int color() 	{
+    int color() {
         if (suit() == heart || suit() == diamond) {
             return red;
         }
