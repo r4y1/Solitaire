@@ -6,6 +6,7 @@ class CardPile {
 
     // coordinates of the card pile
     private Card firstCard;
+    private int countOfCards;
 
     int x;
     int y;
@@ -15,6 +16,7 @@ class CardPile {
         x = xl;
         y = yl;
         firstCard = null;
+        countOfCards = 0;
     }
 
     // access to cards are not overridden
@@ -32,6 +34,7 @@ class CardPile {
         if (firstCard != null) {
             result = firstCard;
             firstCard = firstCard.link;
+            countOfCards--;
         }
         return result;
     }
@@ -50,6 +53,7 @@ class CardPile {
     public void addCard (Card aCard) {
         aCard.link = firstCard;
         firstCard = aCard;
+        countOfCards++;
     }
 
     public void display (Graphics g) {
@@ -62,5 +66,9 @@ class CardPile {
 
     public boolean canTake (Card aCard) {
         return false;
+    }
+
+    public int getCountOfCards() {
+        return countOfCards;
     }
 }

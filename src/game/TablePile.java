@@ -4,6 +4,8 @@ import java.awt.*;
 
 class TablePile extends CardPile {
 
+    static final int CARD_RANGE = 35;
+
     TablePile (final int x, final int y, final int c) {
         // initialize the parent class
         super(x, y);
@@ -24,9 +26,11 @@ class TablePile extends CardPile {
     }
 
     public boolean includes (final int tx, final int ty) {
-        // don't test bottom of card
-        return x <= tx && tx <= x + Card.width &&
-                y <= ty;
+        int margin = CARD_RANGE * (getCountOfCards() - 1);
+        margin = margin >= 0 ? margin : 0;
+        return x <= tx && tx <= x + Card.width
+            && y + margin <= ty
+            && ty <= y + margin + Card.height;
     }
 
     public void select (int tx, int ty) {
@@ -70,5 +74,4 @@ class TablePile extends CardPile {
     public void display (Graphics g) {
         stackDisplay(g, top());
     }
-
 }
