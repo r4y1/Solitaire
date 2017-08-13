@@ -2,7 +2,7 @@ package game;
 
 class DiscardPile extends CardPile {
 
-    DiscardPile (int x, int y) {
+    DiscardPile (final int x, final int y) {
         super (x, y);
     }
 

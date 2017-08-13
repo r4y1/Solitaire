@@ -5,10 +5,11 @@ import java.awt.*;
 class CardPile {
 
     // coordinates of the card pile
-    protected int x;
-    protected int y;
-
     private Card firstCard;
+
+    int x;
+    int y;
+
 
     CardPile (int xl, int yl) {
         x = xl;
@@ -18,15 +19,15 @@ class CardPile {
 
     // access to cards are not overridden
 
-    public Card top() {
+    Card top() {
         return firstCard;
     }
 
-    public boolean empty() {
+    boolean empty() {
         return firstCard == null;
     }
 
-    public Card pop() {
+    Card pop() {
         Card result = null;
         if (firstCard != null) {
             result = firstCard;

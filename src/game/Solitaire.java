@@ -4,6 +4,7 @@ import java.applet.Applet;
 import java.awt.*;
 
 public class Solitaire extends Applet {
+
     static DeckPile deckPile;
     static DiscardPile discardPile;
     static TablePile tableau[];
