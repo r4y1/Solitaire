@@ -5,56 +5,56 @@ import java.awt.*;
 class Card {
 
     // data fields for colors and suits
-    final static int red = 0;
-    final static int black = 1;
+    private final static int red = 0;
+    private final static int black = 1;
 
-    final static int heart = 0;
-    final static int spade = 1;
-    final static int diamond = 2;
-    final static int club = 3;
+    private final static int heart = 0;
+    private final static int spade = 1;
+    private final static int diamond = 2;
+    private final static int club = 3;
 
     final static int width = 50;
     final static int height = 70;
 
     // data fields
-    private boolean faceup;
-    private int r;
-    private int s;
+    private boolean faceUp;
+    private int rank;
+    private int suit;
 
-    public Card link;
+    Card link;
 
     // constructor
-    Card (int sv, int rv) {
-        s = sv;
-        r = rv;
-        faceup = false;
+    Card (int suitValue, int rankValue) {
+        suit = suitValue;
+        rank = rankValue;
+        faceUp = false;
     }
 
     // access attributes of card
-    public int getRank() {
-        return r;
+    int getRank() {
+        return rank;
     }
 
-    public int suit() {
-        return s;
+    int suit() {
+        return suit;
     }
 
-    public boolean isFaceUp() {
-        return faceup;
+    boolean isFaceUp() {
+        return faceUp;
     }
 
-    public void flip() {
-        faceup = !faceup;
+    void flip() {
+        faceUp = !faceUp;
     }
 
-    public int color() 	{
+    int color() 	{
         if (suit() == heart || suit() == diamond) {
             return red;
         }
         return black;
     }
 
-    public void draw (Graphics g, int x, int y) {
+    void draw(Graphics g, int x, int y) {
         String names[] = {"A", "2", "3", "4", "5", "6",
                 "7", "8", "9", "10", "J", "Q", "K"};
         // clear rectangle, draw border
